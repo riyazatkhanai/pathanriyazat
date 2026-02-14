@@ -1,0 +1,144 @@
+/* ================= ABOUT SECTION ================= */
+.about .container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 4rem;
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+/* Info */
+.info p {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.info strong {
+  color: var(--primary-color);
+}
+
+/* Interests */
+.interests h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: var(--secondary-color);
+}
+
+.interests ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.interests li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+
+  background: var(--extra-light);
+  color: var(--text-light);
+
+  transition: 0.3s ease;
+}
+.interests li i {
+  color: var(--primary-color);
+}
+.interests li:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+}
+
+.interests li:hover i {
+  color: white;
+}
+
+@media (max-width: 768px) {
+
+  .about .container {
+    flex-direction: column; /* stack vertically */
+  }
+
+  /* Text first */
+  .about-content {
+    order: 1;
+  }
+
+  /* Image after text */
+  .about-image {
+    order: 2;
+    width: 70%;
+  }
+
+  .interests ul {
+    flex-wrap: nowrap;
+  }
+  .description{
+    font-size: 1rem;
+  }
+}
+/* Keyframes for fade-in animations */
+.about-content {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.about-image {
+  opacity: 0;
+  animation: fadeRight 1.2s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.interests {
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.interests li {
+  opacity: 0;
+  animation: popUp 1s ease forwards;
+}
+
+/* Slower Delay */
+.interests li:nth-child(1) { animation-delay: 0.3s; }
+.interests li:nth-child(2) { animation-delay: 0.8s; }
+.interests li:nth-child(3) { animation-delay: 1.3s; }
+.interests li:nth-child(4) { animation-delay: 1.8s; }

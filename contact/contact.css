@@ -1,0 +1,228 @@
+/* ================= CONTACT SECTION ================= */
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Heading */
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-heading .section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+/* ================= CONTACT WRAPPER ================= */
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/* ================= LEFT INFO CARD ================= */
+
+.info-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.info-box h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.info-box p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* ================= CONTACT DETAILS ================= */
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.contact-details strong {
+  min-width: 90px;
+  color: var(--secondary-color);
+}
+
+/* Updated Value Text */
+
+.contact-value {
+  margin: 0;
+  font-weight: 500;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 20%;
+  display: grid;
+  place-items: center;
+
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+
+  transition: 0.3s ease;
+}
+
+.social-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.social-icon:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+
+  animation: bounce 0.3s ease;
+}
+
+/* ================= RIGHT FORM CARD ================= */
+
+.contact-form form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
+/* Form Groups */
+
+.form-group {
+  margin-bottom: 1.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  font-size: 1rem;
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+/* Focus Effect */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 14px rgba(0, 123, 255, 0.25);
+}
+
+/* Button */
+
+.btn-submit {
+  width: 100%;
+  padding: 0.9rem;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  color: white;
+
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+
+  transition: 0.4s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= KEYFRAMES ================= */
+
+/* Only Bounce Needed Here */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-8px) scale(1.1);
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.15);
+  }
+
+  100% {
+    transform: translateY(-8px) scale(1.1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-heading .section-title {
+    font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Brand Color (Main Highlight) */
+  --primary-color: #2563eb;
+  /* Royal Blue */
+
+  /* Secondary Accent Color */
+  --secondary-color: #9333ea;
+  /* Purple Accent */
+
+  /* Background Colors */
+  --bg-dark: #0f172a;
+  /* Dark Navy */
+  --bg-light: #f8fafc;
+  /* Light Gray */
+
+  /* Text Colors */
+  --text-dark: #0f172a;
+  /* Heading Text */
+  --text-light: #64748b;
+  /* Paragraph Text */
+
+  /* Card & Section Colors */
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+
+  /* Extra Light Background */
+  --extra-light: #f1f5f9;
+
+  /* White */
+  --white: #ffffff;
+
+  /* Max Width */
+  --max-width: 1200px;
+
+  /* Smooth Shadow */
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  /* Radius */
+  --radius: 12px;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Navbar Background */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+
+  box-shadow: var(--shadow);
+}
+
+/* Logo */
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.logo a span {
+  color: var(--primary-color);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  position: relative;
+  overflow: hidden;
+
+  color: var(--white);
+  font-size: 1.15rem;
+  padding: 0.5rem 1rem;
+
+  border-radius: 14px;
+  /* ✅ Button jaisa */
+
+  transition: all 0.35s ease;
+}
+
+/* Hover Background */
+.nav-links a:hover {
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+
+  transform: translateY(-3px);
+}
+
+/* ✨ Shine Strip */
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+
+  width: 18%;
+  height: 100%;
+
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.30),
+      transparent);
+
+  transform: skewX(-20deg);
+
+  border-radius: inherit;
+  /* ✅ Fix Nook */
+
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* Hover Shine Move */
+.nav-links a:hover::before {
+  left: 82%;
+  opacity: 1;
+}
+
+/* Button */
+.btn {
+  position: relative;
+  overflow: hidden;
+
+  padding: 0.85rem 1.9rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: white;
+
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ✨ Shine Strip */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+
+  width: 30%;
+  height: 100%;
+
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent);
+
+  transform: skewX(-25deg);
+
+  border-radius: inherit;
+  /* ✅ Fix nook */
+
+  opacity: 0;
+  transition: all 1.2s ease;
+}
+
+/* Hover Shine Move */
+.btn:hover::before {
+  left: 70%;
+  opacity: 1;
+}
+
+/* Hamburger */
+.nav-menu-btn {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.close-item {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+/*Common Section Style (All Pages)*/
+section {
+  padding: 6rem 2rem;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #0f172a;
+  padding: 2.5rem 2rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+/* Gradient Top Border */
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
+  text-align: center;
+}
+
+/* Footer Text */
+
+.footer p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.footer p span {
+  color: white;
+  font-weight: 700;
+}
+
+/* Social Icons */
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 20%;
+  font-size: 1.5rem;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  transition: 0.4s ease;
+}
+
+.footer-social a:hover {
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Footer */
+
+@media (max-width: 768px) {
+
+  /* Hide Navbar Button Only (Hero buttons safe) */
+  .nav-btn {
+    display: none;
+  }
+
+  /* Show Hamburger Icon */
+  .nav-menu-btn {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  /* Mobile Menu Default Hidden */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 260px;
+    height: 100vh;
+
+    background: var(--bg-dark, var(--secondary-color));
+    padding: 4rem 2rem;
+
+    gap: 1.2rem;
+
+    transition: right 0.4s ease;
+  }
+
+  /* Open Menu When Targeted */
+  .nav-links:target {
+    right: 0;
+  }
+
+  /* Close Button Item Visible */
+  .close-item {
+    display: block;
+  }
+
+  /* Close Button Styling */
+  .nav-links .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    font-size: 1.8rem;
+    color: var(--white);
+
+    width: 65px;
+  }
+
+  /* Remove Hover Effects on Close */
+  .close-btn:hover {
+    background: none;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Links Full Width */
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+/* ================= GLOBAL ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
